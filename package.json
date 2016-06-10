@@ -1,7 +1,7 @@
 {
   "name": "neovim-mode",
   "main": "./lib/nvim-mode",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Connect to a remote Neovim server... and use that to edit!",
   "license": "MIT",
   "repository": "https://github.com/tjdevries/nvim-mode",
