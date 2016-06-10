@@ -8,20 +8,33 @@
 2 info using npm@2.13.3
 3 info using node@v0.10.40
 4 info git [ 'status', '--porcelain' ]
-5 verbose stack Error: Git working directory not clean.
-5 verbose stack M package.json
-5 verbose stack     at C:\Users\timdevries\AppData\Local\atom\app-1.9.0-beta0\resources\app\apm\node_modules\npm\lib\version.js:171:21
-5 verbose stack     at ChildProcess.exithandler (child_process.js:656:7)
-5 verbose stack     at ChildProcess.emit (events.js:98:17)
-5 verbose stack     at maybeClose (child_process.js:766:16)
-5 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:833:5)
-6 verbose cwd C:\Users\timdevries\Git\nvim-mode
-7 error Windows_NT 6.2.9200
-8 error argv "C:\\Users\\timdevries\\AppData\\Local\\atom\\app-1.9.0-beta0\\resources\\app\\apm\\bin\\node.exe" "C:\\Users\\timdevries\\AppData\\Local\\atom\\app-1.9.0-beta0\\resources\\app\\apm\\node_modules\\npm\\bin\\npm-cli.js" "version" "minor" "-m" "Prepare %s release"
-9 error node v0.10.40
-10 error npm  v2.13.3
-11 error Git working directory not clean.
-11 error M package.json
-12 error If you need help, you may report this error at:
-12 error     <https://github.com/npm/npm/issues>
-13 verbose exit [ 1, true ]
+5 info preversion neovim-mode@0.4.0
+6 verbose version.write data { name: 'neovim-mode',
+6 verbose version.write   main: './lib/nvim-mode',
+6 verbose version.write   version: '0.4.0',
+6 verbose version.write   description: 'Connect to a remote Neovim server... and use that to edit!',
+6 verbose version.write   license: 'MIT',
+6 verbose version.write   repository: 'https://github.com/tjdevries/nvim-mode',
+6 verbose version.write   engines: { atom: '>=1.0.0 <2.0.0' },
+6 verbose version.write   activationCommands: { 'atom-workspace': 'nvim-mode:toggle' },
+6 verbose version.write   dependencies: { 'event-kit': '^0.7.2', jquery: '^2', msgpack5rpc: '1.0.1' } } to package.json
+7 info version neovim-mode@0.4.0
+8 info git [ 'add', 'package.json' ]
+9 info git [ 'commit', '-m', 'Prepare 0.4.0 release' ]
+10 info git [ 'tag', 'v0.4.0', '-am', 'Prepare 0.4.0 release' ]
+11 verbose stack Error: Command failed: fatal: tag 'v0.4.0' already exists
+11 verbose stack
+11 verbose stack     at ChildProcess.exithandler (child_process.js:658:15)
+11 verbose stack     at ChildProcess.emit (events.js:98:17)
+11 verbose stack     at maybeClose (child_process.js:766:16)
+11 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:833:5)
+12 verbose cwd C:\Users\timdevries\Git\nvim-mode
+13 error Windows_NT 6.2.9200
+14 error argv "C:\\Users\\timdevries\\AppData\\Local\\atom\\app-1.9.0-beta0\\resources\\app\\apm\\bin\\node.exe" "C:\\Users\\timdevries\\AppData\\Local\\atom\\app-1.9.0-beta0\\resources\\app\\apm\\node_modules\\npm\\bin\\npm-cli.js" "version" "minor" "-m" "Prepare %s release"
+15 error node v0.10.40
+16 error npm  v2.13.3
+17 error code 128
+18 error Command failed: fatal: tag 'v0.4.0' already exists
+19 error If you need help, you may report this error at:
+19 error     <https://github.com/npm/npm/issues>
+20 verbose exit [ 1, true ]
