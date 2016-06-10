@@ -1,0 +1,30 @@
+'atom-text-editor.vim-mode':
+  'enter': 'unset!'
+  'backspace': 'core:cancel'
+  'ctrl-b': 'core:cancel'
+  'ctrl-f': 'core:cancel'
+  'ctrl-n': 'unset!'
+  'ctrl-p': 'unset!'
+  'tab': 'core:cancel'
+  'end': 'unset!'
+  'home': 'unset!'
+  'delete': 'unset!'
+  'up': 'unset!'
+  'down': 'unset!'
+  'left': 'unset!'
+  'right': 'unset!'
+  'pagedown': 'unset!'
+  'pageup': 'unset!'
+  'shift-tab': 'core:cancel'
+
+'.platform-win32 .atom-text-editor':
+  'ctrl-r': 'unset!'
+
+'atom-text-editor.vim-mode:not(mini).autocomplete-active':
+  'tab': 'autocomplete-plus:confirm'
+  'up': 'core:move-up'
+  'down': 'core:move-down'
+  'esc': 'autocomplete-plus:cancel'
+
+'atom-workspace':
+  'ctrl-alt-o': 'nvim-mode:toggle'

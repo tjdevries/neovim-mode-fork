@@ -1,43 +1,109 @@
-## Vim Mode package [![Build Status](https://travis-ci.org/atom/vim-mode.svg?branch=master)](https://travis-ci.org/atom/vim-mode)
+# What is this?
 
-Provides vim modal control for Atom, ideally blending the best of vim
-and Atom.
+This is a fork of the Neovim version of [vim-mode](https://github.com/carlosdcastillo/vim-mode).
+I am hoping to be able to continue the work that was left there of communicating to a Neovim process.
+We shall see :D
 
-### Installing
+This is a work in progress [Atom](http://atom.io/) package that implements
+complete vim bindings by connecting to
+[Neovim](http://github.com/neovim/neovim).
 
-Use the Atom package manager, which can be found in the Settings view or
-run `apm install vim-mode` from the command line.
+# What do you want to do with this?
 
-### Current Status
+This project aims to:
 
-Sizable portions of Vim's command mode work as you'd expect, including
-many complex combinations. Even so, this package is far from finished (Vim
-wasn't built in a day).
+* Not have VIM emulation in Atom, try really having Neovim inside of Atom.
+* See if I can figure out what's happening with this new UI Protocol
 
-If there's a feature of Vim you're missing, it might just be that you use it
-more often than other developers. Adding a feature can be quick and easy. Check
-out the [closed pull requests](https://github.com/atom/vim-mode/pulls?direction=desc&page=1&sort=created&state=closed)
-to see examples of community contributions. We're looking forward to yours, too.
+# How do you run this?
 
-### Documentation
+Install, run, and quit Atom to make sure .atom exists
 
-* [Overview](https://github.com/atom/vim-mode/blob/master/docs/overview.md)
-* [Motions](https://github.com/atom/vim-mode/blob/master/docs/motions.md)
-* [Operators](https://github.com/atom/vim-mode/blob/master/docs/operators.md)
-* [Commands](https://github.com/atom/vim-mode/blob/master/docs/commands.md)
-* [Windows](https://github.com/atom/vim-mode/blob/master/docs/windows.md)
-* [Scrolling](https://github.com/atom/vim-mode/blob/master/docs/scrolling.md)
+Install vim-mode
 
-### Development
+    $ cd .atom/packages
+    $ git clone https://github.com/carlosdcastillo/vim-mode.git
+    $ cd vim-mode
+    $ apm install
 
-* Create a branch with your feature/fix.
-* Add a spec (take inspiration from the ones that are already there).
-* If you're adding a command be sure to update the appropriate file in
-  `docs/`
-* Create a PR.
+On OS X and Linux, create a folder for the named pipe:
 
-When in doubt, open a PR earlier rather than later so that you can receive
-feedback from the community. We want to get your fix or feature included as much
-as you do.
+    $ mkdir -p /tmp/neovim
 
-See [the contribution guide](https://github.com/atom/vim-mode/blob/master/CONTRIBUTING.md).
+Run Neovim, pointing it to the named pipe, on OS X and Linux:
+
+    $ NVIM_LISTEN_ADDRESS=/tmp/neovim/neovim nvim
+
+The equivalent in Windows (define an environment variable and point it to the
+named pipe) is:
+
+    set NVIM_LISTEN_ADDRESS=\\.\pipe\neovim
+
+and then
+
+    nvim.exe
+
+# Things TO DO
+
+* See if I can get it working with Neovim 0.1.5+
+
+## Old To Do from fork
+
+* Handle files of more than 9999 lines.
+* Handle (or handle better) Atom initiated cursor position changes.
+* Make one of the following UI connections/integrations: visual selection,
+highlight search, auto completion, etc.
+* Better handle editing of new files
+* Make the geometry of the Atom buffer fully match the geometry of the Neovim
+buffer.
+
+## What was done before?
+
+I've update everything to work with Neovim 0.1.2 (it should also work with the
+version in master of [Neovim](http://github.com/neovim/neovim). The version
+I'm currently using: [download]( https://github.com/neovim/neovim/archive/v0.1.2.tar.gz).
+
+On the [Atom](https://atom.io/) side I am currently using version 1.5.3. In
+versions 0.206 and later you will need to change the name of the directory
+vim-mode to something else (I use the name nvim-mode). If you don't Atom
+confuses this plugin with the one developed by GitHub.
+
+It should be usable enough that if you are adventurous you will be able to get
+day-to-day work done. There are, however, plenty of features missing, so you
+will have to be patient when you use it.
+
+# See it in action
+
+***A video that shows the current (June/2015) status:***
+
+http://youtu.be/FTInd3H7Zec
+
+A video that shows the integration in action in March/2015:
+
+https://www.youtube.com/watch?v=7TVBcdONEJo
+
+An older video from January of the integration in action, using the abstract-ui
+branch:
+
+https://www.youtube.com/watch?v=yluIxQRjUCk
+
+and this is an old video from 2014 using the old redraw-events branch (from mid
+2014):
+
+http://www.youtube.com/watch?v=lH_zb7X6mZw
+
+
+
+# Contributing
+
+1. Find something that doesn't work (this step shouldn't be that hard, plenty
+of things don't work yet)
+2. Either (a) fix it and send me a pull request or (b) file a bug report so I know it
+needs to be fixed.
+
+# Configuring Atom
+
+To make sure that hjkl get repeated like (Vim and Neovim) on Mac you will need to
+run (from the command line):
+
+    defaults write com.github.atom ApplePressAndHoldEnabled -bool false
