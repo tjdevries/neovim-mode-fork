@@ -1,5 +1,5 @@
 {
-  "name": "nvim-mode",
+  "name": "neovim-mode",
   "main": "./lib/nvim-mode",
   "version": "0.1.0",
   "description": "Connect to a remote Neovim server... and use that to edit!",
