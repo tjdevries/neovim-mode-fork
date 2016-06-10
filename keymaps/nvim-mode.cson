@@ -6,8 +6,8 @@
   'ctrl-n': 'unset!'
   'ctrl-p': 'unset!'
   'tab': 'core:cancel'
-  'end': 'unset!' 
-  'home': 'unset!' 
+  'end': 'unset!'
+  'home': 'unset!'
   'delete': 'unset!'
   'up': 'unset!'
   'down': 'unset!'
@@ -25,3 +25,6 @@
   'up': 'core:move-up'
   'down': 'core:move-down'
   'esc': 'autocomplete-plus:cancel'
+
+'atom-workspace':
+  'ctrl-alt-o': 'nvim-mode:toggle'

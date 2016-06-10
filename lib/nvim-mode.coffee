@@ -3,6 +3,8 @@
 
 NvimState = require './nvim-state'
 
+console.log 'We have started development'
+
 module.exports =
 
   activate: ->
