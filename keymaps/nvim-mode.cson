@@ -27,4 +27,4 @@
   'esc': 'autocomplete-plus:cancel'
 
 'atom-workspace':
-  'ctrl-alt-o': 'nvim-mode:toggle'
+  'ctrl-alt-n': 'nvim-mode:toggle'

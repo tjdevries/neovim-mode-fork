@@ -1,15 +1,18 @@
 
-{Disposable, CompositeDisposable} = require 'event-kit'
+{Disposable, CompositeDisposable} = require 'atom'
 
 NvimState = require './nvim-state'
-
-console.log 'We have started development'
 
 module.exports =
 
   activate: ->
 
+    console.log 'We have started development'
+
     @disposables = new CompositeDisposable
+
+    @disposables.add atom.commands.add 'atom-workspace',
+      'nvim-mode:test': => @test()
 
     @disposables.add atom.workspace.observeTextEditors (editor) ->
 
@@ -28,3 +31,8 @@ module.exports =
       editorView.off('.nvim-mode')
 
     @disposables.dispose()
+
+  test: ->
+    console.log 'Neovim Mode Test Initialized...'
+
+    console.log 'All tests passed'

@@ -1,4 +1,4 @@
-_ = require 'underscore-plus'
+# _ = require 'underscore-plus'
 $ = require  'jquery'
 {Point, Range} = require 'atom'
 Marker = require 'atom'

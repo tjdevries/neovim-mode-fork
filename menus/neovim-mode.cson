@@ -1,0 +1,20 @@
+'menu': [
+  'label': 'Packages'
+  'submenu': [
+    'label': 'Neovim Test'
+    'submenu': [
+      {
+        'label': 'Test'
+        'command': 'nvim-mode:test'
+      }
+    ]
+  ]
+]
+
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Test Neovim Client'
+      'command': 'nvim-mode:test'
+    }
+  ]

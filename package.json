@@ -12,6 +12,8 @@
     "atom-workspace": "nvim-mode:toggle"
   },
   "dependencies": {
+    "underscore-plus": "1.x",
+    "atom-space-pen-views":"^2.0.3",
     "event-kit": "^0.7.2",
     "jquery": "^2",
     "msgpack5rpc": "1.0.1"

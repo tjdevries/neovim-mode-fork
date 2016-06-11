@@ -1,7 +1,7 @@
 
 util = require 'util'
-VimGlobals = require './vim-globals'
-VimUtils = require './vim-utils'
+VimGlobals = require './nvim-globals'
+VimUtils = require './nvim-utils'
 
 neovim_send_message = (message,f = undefined) ->
   try
@@ -134,5 +134,3 @@ module.exports =
               #console.log 'item:',item
             if item.uri is atom.workspace.getActiveTextEditor().getURI()
               neovim_set_text(item.text, item.start, item.end, item.delta)
-
-
